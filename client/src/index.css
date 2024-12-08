@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 220 40% 13%;
+    --foreground: 60 10% 98%;
+    --primary: 55 100% 60%;
+    --primary-foreground: 220 40% 13%;
+    --secondary: 280 90% 60%;
+    --secondary-foreground: 60 10% 98%;
+    --accent: 210 100% 60%;
+    --accent-foreground: 60 10% 98%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 60 10% 98%;
+    --muted: 220 40% 20%;
+    --muted-foreground: 60 10% 80%;
+    --popover: 220 40% 13%;
+    --popover-foreground: 60 10% 98%;
+    --card: 220 40% 13%;
+    --card-foreground: 60 10% 98%;
+    --border: 220 40% 25%;
+    --input: 220 40% 25%;
+    --ring: 55 100% 60%;
+    --radius: 1rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Base claymorphic styles for all components */
+  .claymorphic {
+    @apply relative rounded-xl bg-gradient-to-br from-background to-muted;
+    box-shadow: 
+      -8px -8px 12px 0 rgba(255, 255, 255, 0.05),
+      8px 8px 12px 0 rgba(0, 0, 0, 0.3),
+      inset 2px 2px 4px 0 rgba(255, 255, 255, 0.05),
+      inset -2px -2px 4px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  /* Claymorphic styles for specific shadcn components */
+  .button-clay {
+    @apply claymorphic transition-all duration-200;
+  }
+  
+  .button-clay:active {
+    box-shadow: 
+      -4px -4px 8px 0 rgba(255, 255, 255, 0.05),
+      4px 4px 8px 0 rgba(0, 0, 0, 0.3),
+      inset 4px 4px 8px 0 rgba(0, 0, 0, 0.3),
+      inset -4px -4px 8px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .card-clay {
+    @apply claymorphic p-6;
+  }
+
+  .input-clay {
+    @apply claymorphic bg-transparent;
+    box-shadow: 
+      inset -4px -4px 8px 0 rgba(255, 255, 255, 0.05),
+      inset 4px 4px 8px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .select-clay {
+    @apply claymorphic;
+  }
+
+  .dialog-clay {
+    @apply claymorphic border-none;
+  }
+
+  .popover-clay {
+    @apply claymorphic border-none;
+  }
+}
